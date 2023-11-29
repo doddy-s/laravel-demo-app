@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -12,7 +13,8 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
 
     public function index() {
-        return view('index');
+        $posts = Post::select('id', 'content', 'media', 'created_at')->limit(5)->withCount('comments')->orderBy('created_at', 'desc')->get();
+        return view('index', ['posts' => $posts]);
     }
 
     public function dev() {

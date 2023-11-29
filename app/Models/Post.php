@@ -17,7 +17,7 @@ class Post extends Model
         'community_id',
     ];
 
-    public function user()
+    public function users()
     {
         return $this->belongsTo(User::class);
     }
@@ -32,7 +32,7 @@ class Post extends Model
         return $this->hasMany(Like::class);
     }
 
-    public function community()
+    public function communities()
     {
         return $this->belongsTo(Community::class);
     }

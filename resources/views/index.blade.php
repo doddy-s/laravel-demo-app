@@ -18,6 +18,7 @@
 
 <body>
   <x-layouts.dashboard>
+    <x-layouts.feed :posts='$posts' />
     <div class="h-screen w-full bg-cyan-100"></div>
     <div class="h-screen w-full bg-cyan-100"></div>
   </x-layouts.dashboard>
