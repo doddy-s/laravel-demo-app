@@ -3,14 +3,12 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class UserFactory extends Factory
+class CommunityFactory extends Factory
 {
-    protected static ?string $password;
 
     /**
      * Define the model's default state.
@@ -20,9 +18,8 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'username' => fake()->userName(),
-            'email' => fake()->unique()->safeEmail(),
-            'password' => static::$password ??= Hash::make('password'),
+            'name' => fake()->country(),
+            'description' => fake()->sentence(),
         ];
     }
 }

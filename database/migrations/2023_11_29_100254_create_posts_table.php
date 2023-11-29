@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->integer('likes');
             $table->string('content');
             $table->string('media', 255)->nullable();
 
