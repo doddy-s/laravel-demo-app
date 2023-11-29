@@ -8,10 +8,10 @@
   <title>re-Ozone</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
   @vite('resources/css/app.css')
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <style>
     body {
-      font-family: "Inconsolata", sans-serif;
+      font-family: "Poppins", sans-serif;
     }
   </style>
 </head>
