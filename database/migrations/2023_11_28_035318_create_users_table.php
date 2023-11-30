@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password', 255);
 
             $table->string('name', 32)->nullable();
+            $table->string('avatar')->nullable();
             $table->boolean('gender')->nullable();
             $table->string('bio')->nullable();
             

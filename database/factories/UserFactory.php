@@ -21,6 +21,8 @@ class UserFactory extends Factory
     {
         return [
             'username' => fake()->userName(),
+            'name' => fake()->name(),
+            'avatar' => fake()->imageUrl(64,64),
             'email' => fake()->unique()->safeEmail(),
             'password' => static::$password ??= Hash::make('password'),
         ];

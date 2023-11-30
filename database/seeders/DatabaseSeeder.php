@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Community::factory(20)->create()->each(function ($community) {
+        Community::factory(10)->create()->each(function ($community) {
             User::factory(4)->create()->each(function ($user) use ($community) {
-                $user->communities()->attach($community->id);
+                $user->community()->attach($community->id);
                 Post::factory(5)->create([
                     'user_id' => $user->id,
                     'community_id' => $community->id,

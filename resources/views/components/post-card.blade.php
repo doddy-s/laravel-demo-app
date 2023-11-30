@@ -6,7 +6,7 @@
 
       <div class="flex flex-col items-start gap-4">
         <div class="flex">
-          <img class="w-10 h-10 rounded-full mr-2" src="https://github.com/doddy-s.png" alt="">
+          <img class="w-10 h-10 rounded-full mr-2" src="{{ $post->user->avatar }}" alt="">
           <div class="font-medium">
             <div>{{ $post->user->username }}</div>
             <div class="text-sm">On {{ $post->created_at }} in {{ $post->community->name }} Community</div>
