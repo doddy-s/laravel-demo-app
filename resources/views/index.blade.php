@@ -16,7 +16,7 @@
   </style>
 </head>
 
-<body>
+<body class="bg-gray-50 dark:bg-gray-950">
   <x-layouts.dashboard>
     <x-layouts.feed :posts='$posts' />
     <div class="h-screen w-full bg-cyan-100"></div>

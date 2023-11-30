@@ -12,12 +12,14 @@ class Community extends Model
 
     protected $fillable = ['name', 'description'];
 
-    public function users()
+    protected $hidden = ['created_at', 'updated_at'];
+
+    public function user()
     {
         return $this->belongsToMany(User::class, 'members');
     }
 
-    public function posts()
+    public function post()
     {
         return $this->hasMany(Post::class);
     }

@@ -19,3 +19,10 @@
     <!-- Repeat the above row structure for each user in the provided data -->
   </tbody>
 </table>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var dev = {!! json_encode($dev) !!};
+    console.log(dev);
+  });
+</script>

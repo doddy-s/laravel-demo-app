@@ -17,22 +17,28 @@ class Post extends Model
         'community_id',
     ];
 
-    public function users()
+    protected $hidden = [
+        'user_id',
+        'community_id',
+        'updated_at'
+    ];
+
+    public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function comments() 
+    public function comment() 
     {
         return $this->hasMany(Comment::class);
     }
 
-    public function likes() 
+    public function like() 
     {
         return $this->hasMany(Like::class);
     }
 
-    public function communities()
+    public function community()
     {
         return $this->belongsTo(Community::class);
     }

@@ -6,13 +6,13 @@
 
       <div class="flex flex-col items-start gap-4">
         <div class="flex">
-          <img class="w-10 h-10 rounded-full" src="https://github.com/doddy-s.png" alt="">
+          <img class="w-10 h-10 rounded-full mr-2" src="https://github.com/doddy-s.png" alt="">
           <div class="font-medium">
-            <div>Doddy</div>
-            <div class="text-sm">{{ $post->created_at }}</div>
+            <div>{{ $post->user->username }}</div>
+            <div class="text-sm">On {{ $post->created_at }} in {{ $post->community->name }} Community</div>
           </div>
         </div>
-        <p class="flex-wrap">{{ $post->content }}</p>
+        <p class="break-all">{{ $post->content }}</p>
         <img class="h-96 object-cover rounded-lg aspect-auto" src="{{ $post->media }}" alt=""/>
       </div>
 
@@ -34,7 +34,7 @@
     <li class="me-2">
       <button id="services-tab" data-tabs-target="#{{ 'comment' . $post->id }}" type="button" role="tab"
         aria-controls="services" aria-selected="false"
-        class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">{{ $post->comments_count }}
+        class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">{{ $post->comment_count }}
         Comments</button>
     </li>
   </ul>

@@ -13,12 +13,14 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
 
     public function index() {
-        $posts = Post::select('id', 'content', 'media', 'created_at')->limit(5)->withCount('comments')->orderBy('created_at', 'desc')->get();
+        $posts = Post::with('user')->with('community')->with('comment')->withCount('comment')->limit(20)->get();
         return view('index', ['posts' => $posts]);
     }
 
     public function dev() {
+        // $dev = Post::select('id', 'content', 'media', 'created_at')->limit(5)->with('user')->withCount('comment')->orderBy('created_at', 'desc')->get();
+        $dev = Post::with('user')->with('community')->with('comment')->withCount('comment')->limit(5)->get();
         $users = User::all();
-        return view('dev', ['users' => $users]);
+        return view('dev', ['users' => $users, 'dev' => $dev]);
     }
 }
