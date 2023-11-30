@@ -13,7 +13,7 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
 
     public function index() {
-        $posts = Post::with('user')->with('community')->with('comment')->withCount('comment')->limit(20)->get();
+        $posts = Post::with('user')->with('community')->with('comment')->withCount('comment')->withCount('like')->limit(20)->get();
         return view('index', ['posts' => $posts]);
     }
 

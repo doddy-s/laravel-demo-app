@@ -19,7 +19,11 @@
     </div>
     <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="{{ 'comment' . $post->id }}" role="tabpanel"
       aria-labelledby="services-tab">
-      Bar
+      Comments will showed here
+    </div>
+    <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="{{ 'like' . $post->id }}" role="tabpanel"
+      aria-labelledby="services-tab">
+      Users who like will showed here
     </div>
   </div>
 
@@ -34,8 +38,15 @@
     <li class="me-2">
       <button id="services-tab" data-tabs-target="#{{ 'comment' . $post->id }}" type="button" role="tab"
         aria-controls="services" aria-selected="false"
-        class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">{{ $post->comment_count }}
-        Comments</button>
+        class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">
+        {{ $post->comment_count }} Comments</button>
+    </li>
+    <li class="me-2">
+      <button id="services-tab" data-tabs-target="#{{ 'like' . $post->id }}" type="button" role="tab"
+        aria-controls="services" aria-selected="false"
+        class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">
+        {{ $post->like_count }} Likes
+      </button>
     </li>
   </ul>
 </div>
